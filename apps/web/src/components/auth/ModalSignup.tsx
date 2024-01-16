@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { ModalAction } from '@/lib/features/userSlice';
 import FormRegister from './FormRegister';
 
-const ModalSignin = () => {
+const ModalSignup = () => {
   const selectorModal = useAppSelector((state) => state.user.showModal);
 
   const dispatch = useAppDispatch();
@@ -62,4 +62,4 @@ const ModalSignin = () => {
   );
 };
 
-export default ModalSignin;
+export default ModalSignup;

@@ -8,7 +8,7 @@ const useRegister = async(body:IUser) => {
              lastName : body.lastName,
              
         })
-
+        return register
     } catch (error) {
         console.log(error);
         

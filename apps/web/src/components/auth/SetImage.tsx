@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Input4 = () => {
+const SetImage = ({ setNext, formik }: any) => {
   return (
     <div>
       <div className="flex flex-col items-center">
@@ -20,41 +20,31 @@ const Input4 = () => {
                   <input
                     type="file"
                     className="h-full w-full opacity-0"
-                    name=""
+                    name="image"
+                    onChange={formik?.handleChange}
+                    value={formik.values?.image}
+                    onBlur={formik?.handleBlur}
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <p>Masukan your Image <span className='opacity-50'>(optional)</span></p>
       </div>
-      <div className="m-6">
-        <label
-          htmlFor="codeReferal"
-          className="block mb-2 text-start text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Masukan Kode Referal
-        </label>
-        <input
-          type="text"
-          id="codereferal"
-          className="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="text..."
-        />
-      </div>
+
       <div className="flex flex-col space-y-5 w-full px-4 mt-8">
         <div>
           <button
             className="flex flex-row items-center justify-center text-center w-full border rounded-xl outline-none py-5  bg-blue-700 border-none text-white text-sm shadow-sm"
             type="submit"
           >
-            Submit
+            continue
           </button>{' '}
         </div>
       </div>
-
     </div>
   );
 };
 
-export default Input4;
+export default SetImage;

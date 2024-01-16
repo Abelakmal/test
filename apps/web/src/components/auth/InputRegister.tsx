@@ -1,13 +1,9 @@
 import React from 'react';
 import InputFields from '../InputFields';
+import { isEmptyObject } from '@/validation/isEmptyObject';
 
-const Input1 = ({ setNext, formik }: any) => {
-  const isEmptyObject = (obj: {}) => obj.constructor === Object && Object.keys(obj).length === 0;
-  console.log(
-    
-  );
+const InputRegister = ({ setNext, formik }: any) => {
 
-  
 
   return (
     <section className="m-10 ">
@@ -27,7 +23,7 @@ const Input1 = ({ setNext, formik }: any) => {
             label="lastName"
             name="lastName"
             type="text"
-            id="firstName"
+            id="lastName"
             formik={formik}
           />
         </div>
@@ -50,6 +46,27 @@ const Input1 = ({ setNext, formik }: any) => {
           formik={formik}
         />
       </div>
+      <div className='flex mb-5'>
+        <div className="mr-5">
+          <InputFields
+            label="Password"
+            name="password"
+            type="password"
+            id="password"
+            formik={formik}
+          />
+        </div>
+        <div>
+          <InputFields
+            label="Confirm Password"
+            name="confirmPassword"
+            type="password"
+            id="confirmPassword"
+            formik={formik}
+          />
+        </div>
+      </div>
+
       <div className="text-center">
         <div className="text-start ">
           <p className="hover:text-blue-500 hover:underline cursor-pointer">
@@ -57,12 +74,9 @@ const Input1 = ({ setNext, formik }: any) => {
           </p>
         </div>
         <button
-          disabled={!((Boolean(formik.values.firstName) &&
-            Boolean(formik.values.lastName) &&
-            Boolean(formik.values.phoneNumber) &&
-            Boolean(formik.values.email)) && isEmptyObject(formik.errors))}
           className="text-white text-center bg-[#4f4cee] hover:bg-blue-800 focus:ring-4 focus:outline-none  focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() => setNext('input2')}
+          
+          type='submit'
         >
           Continue
         </button>
@@ -71,4 +85,4 @@ const Input1 = ({ setNext, formik }: any) => {
   );
 };
 
-export default Input1;
+export default InputRegister;

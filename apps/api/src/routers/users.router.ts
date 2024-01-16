@@ -10,7 +10,8 @@ export class UserRouter {
     this.initializeRoutes();
   }
   private initializeRoutes(): void {
-    this.router.post('/register', this.userController.Register)
+    this.router.post('/register', this.userController.register)
+    this.router.post('/upload-image',this.userController.uploadImage)
   }
   getRouter(): Router {
     return this.router;
